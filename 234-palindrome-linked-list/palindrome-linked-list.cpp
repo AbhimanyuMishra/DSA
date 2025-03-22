@@ -9,13 +9,15 @@
  * };
  */
 ListNode* reverse(ListNode* head) {
-    if (head == NULL || head->next == NULL)
-        return head;
-    ListNode* newhead = reverse(head->next);
-    ListNode* front = head->next;
-    front->next = head;
-    head->next = nullptr;
-    return newhead;
+    ListNode* prev = nullptr;
+    ListNode* curr = head;
+    while (curr != nullptr) {
+        ListNode* nextTemp = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = nextTemp;
+    }
+    return prev;
 };
 class Solution {
 public:
