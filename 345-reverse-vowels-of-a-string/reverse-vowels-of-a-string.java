@@ -5,8 +5,8 @@ class Solution {
         int left=0;
         int right =s.length()-1;
     while(left<right){
-        char l=s.charAt(left);
-        char r=s.charAt(right);
+        char l=arr[left];
+        char r=arr[right];
         if(vowel.indexOf(l)==-1){
             left++;
             continue;
